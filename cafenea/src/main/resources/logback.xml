@@ -1,0 +1,23 @@
+<configuration>
+
+    <!-- Afișează doar interogările SQL -->
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+
+    <!-- Ascunde mesajele de tip DEBUG pentru alte componente Hibernate -->
+    <logger name="org.hibernate" level="INFO" />
+
+    <!-- Ascunde detaliile parametrilor SQL (opțional) -->
+    <logger name="org.hibernate.type.descriptor.sql" level="WARN" />
+
+    <!-- Appender pentru consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
